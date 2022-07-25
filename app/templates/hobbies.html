@@ -1,26 +1,23 @@
-{% extends 'base.html' %}
 {% import 'components.html' as components %}
 
-<!---->
-{% macro hobby(hobby_data) -%}
-    <h2>{{ hobby_data.name }}</h2>
-    <div class="hobby">
-        {% for image_path in hobby_data.images %}
-            <img src={{ image_path }}/>
-        {% endfor %}
-    </div>
-{%- endmacro %}
+{% extends 'base.html' %}
 
 {% block header %}
-
-    <span>Sambina Islam Aninta</span>
+{{ components.backHomeButton() }}
+<span>Sambina Islam Aninta</span>
 {% endblock %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}
+{{ Title }}
+{% endblock %}
 
 {% block content %}
-    {{ components.menuBar(includeHome=true) }}
-    {% for hobby_item in hobby_list %}
-        {{ hobby(hobby_item) }}
-    {% endfor %}
+
+<h1>{{ title }}</h1>
+<h2> Hiking </h2>
+<img src="../../static/img/hike.JPG" width="70%">
+<h2> Painting </h2>
+<img src="../../static/img/IMG_1760.jpg" width="70%">
+<img src="../../static/img/IMG_1761.jpg" width="70%">
+
 {% endblock %}
